@@ -1,0 +1,11 @@
+- name: Adding Java Repo
+  apt_repository:
+    repo: ppa:openjdk-r/ppa
+        
+- name: Install java
+  apt:
+    update_cache: yes
+    name: openjdk-8-jdk
+    state: latest
+    install_recommends: no
+  become: yes
